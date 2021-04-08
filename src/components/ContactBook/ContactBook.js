@@ -1,6 +1,8 @@
 import Contact from '../Contact/Contact'
 
-function ContactBook(props) {
+function ContactBook({list}) {
+
+    console.log(list)
     return (
         <div className="ContactBook">
             Contact Book
@@ -12,7 +14,9 @@ function ContactBook(props) {
                     <th>Phone</th>
                     <th>Last Contacted</th>
                 </tr>
-                <Contact />
+                {list.contacts.map((contact, idx) =>
+                (<Contact contact={contact} />
+                ))}
             </table>
         </div>
     )

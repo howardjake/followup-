@@ -6,7 +6,18 @@ import NewContact from './components/NewContact/NewContact';
 import './App.css';
 
 function App() {
-  const { list, setList } = useState();
+
+  const [ list, setList ] = useState({
+    contacts: [],
+    newContact: {
+      name: "", 
+      email: "", 
+      website: "", 
+      number: "",
+    }
+  });
+
+  console.log(list.newContact.name)
   
 
   return (
@@ -14,8 +25,8 @@ function App() {
       <header className="App-header">
         <h1>Followup</h1>
       </header>
-      <ContactBook />
-      <NewContact />
+      <ContactBook list={list} />
+      <NewContact setList={setList} list={list} />
     </div>
   );
 }

@@ -1,12 +1,16 @@
-function Contact() {
+import '../Contact/Contact.css'
+
+function Contact(props) {
+
+    console.log(props.contact)
 
  return(
         <tr>
-            <td>John Doe</td>
-            <td>eamil@email.com </td>
-            <td>site.com </td>
-            <td>(555) 555-555 </td>
-            <td>3 days ago </td>
+            <td>{props.contact.name}</td>
+            <td>{props.contact.email}</td>
+            <td>{props.contact.website}</td>
+            <td>{props.contact.number}</td>
+            <td>Never</td>
             <button type="submit">Contacted</button>
             <button type="submit">Edit</button>
         </tr>

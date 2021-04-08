@@ -16,10 +16,10 @@
 
 .ContactBook {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: space-between;
   flex-direction: column;
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
 }
 
