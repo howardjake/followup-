@@ -1,7 +1,13 @@
 .input {
-    margin: 10px 0 10px 10px;
+    width: 95%;
+    margin:  0 0 0 2px;
 }
 
-.addPage {
+/* .addPage {
     margin: 0 auto;
+} */
+
+td {
+    height: 10px;
+    padding: 0;
 }

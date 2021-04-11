@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
 .App {
   text-align: center;
 }
 
 .App-header {
+  position: fixed;
+  width: 98vw;
   background-color: #9b9b9b;
-  min-height: 16vh;
+  height: 9vh;
   display: flex;
   font-size: calc(10px + 2vmin);
-  color: black;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(0, 0, 0);
+  justify-content: space-between;
+  padding: 0 1vw;
+  align-items: flex-end;
 }
 
 .App-link {
@@ -16,33 +24,23 @@
 
 .ContactBook {
   display: flex;
-  justify-content: space-between;
-  align-items: space-between;
+  position: relative;
   flex-direction: column;
-  width: 90vw;
-  margin: 0 auto;
-}
-
-.NewContact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 30vw;
-  margin:  0 auto;
+  width: 1200px;
+  margin: 0 0 0 2vw;
+  top: 10vh;
+  z-index: -2;
 }
 
 th {
   text-align: left;
-  border-left: 2px solid black;
   border-bottom: 2px solid black;
 }
 
 td {
   text-align: left;
-  padding-right: 30px;
-  padding-left: 5px;
-  border-left: 2px dotted rgb(161, 161, 161);
-  border-bottom: 2px dotted rgb(161, 161, 161);
+  border-left: 1px dotted rgb(161, 161, 161);
+  border-bottom: 1px solid rgba(185, 184, 184, 0.747);
 }
 
 

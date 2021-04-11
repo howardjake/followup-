@@ -1,5 +1,12 @@
 td {
-    font-size: 1.2vw;
+    font-size: 20px;
     height: 15px;
 }
 
+button {
+    margin: 2px 3px;
+}
+
+p {
+    margin-left: 0.5vw;
+}

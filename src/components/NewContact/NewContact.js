@@ -1,5 +1,7 @@
 import styles from '../NewContact/NewContact.module.css';
 
+import { addContact } from '../../services/database'
+
 function NewContact(props) {
     function handleChange(e) {
         props.setList((prevState) => ({
@@ -14,11 +16,13 @@ function NewContact(props) {
         })) 
       }
 
-function addContact(e) {
+async function addOne(e) {
+    if (!props.list.user) return;
     e.preventDefault()
+    const contact = await addContact(props.list.newContact, props.list.user);
     props.setList((prevState) => ({
       ...prevState,
-      contacts: [...prevState.contacts, prevState.newContact],
+      contacts: [...prevState.contacts, contact],
       newContact: {
           name: "", 
           email: "", 
@@ -28,29 +32,33 @@ function addContact(e) {
   }));
 }
 
-    return(
-           <div className={styles.addPage}>
-                <h3>Add a new Contact</h3>
-               <form action="" className="NewContact" onSubmit={addContact}>
-                   <label htmlFor="">
-                        Name
-                        <input name="name" value={props.list.newContact.name} type="text"  className={styles.input} onChange={handleChange} />
-                    </label>
-                   <label htmlFor="">
-                        Email 
-                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input} onChange={handleChange} />
-                    </label>
-                   <label htmlFor="">
-                        Website
-                        <input name="website" value={props.list.newContact.website}type="text" name="website" id="" className={styles.input} onChange={handleChange} />
-                    </label>
-                   <label htmlFor="">
-                        Number
-                        <input value={props.list.newContact.number}type="text" name="number" id="" className={styles.input} onChange={handleChange} />
-                    </label>
-                   <button type="submit">Add Contact</button> 
-               </form>
-           </div>
+    return(       
+      <tr>
+                  <form action="" className="NewContact" onSubmit={addOne} id="form"/>
+                      <td>
+                        <input name="name" value={props.list.newContact.name} type="text"  className={styles.input}form="form" onChange={handleChange} />
+                      </td>
+                   
+                      <td>
+
+                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input} form="form" onChange={handleChange} />
+                      </td>
+                    
+                   <td>
+                        <input name="website" value={props.list.newContact.website}type="text" name="website" id="" className={styles.input} form="form" onChange={handleChange} />
+                   </td>
+                    
+                   <td>
+                        <input value={props.list.newContact.number}type="text" name="number" id="" className={styles.input} form="form" onChange={handleChange} />
+                   </td>
+                   <td></td>
+                    <td>
+
+                   <button type="submit" form="form">Add</button> 
+                    </td>
+               
+                </tr>
+           
     )
     
    }

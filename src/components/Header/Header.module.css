@@ -1,0 +1,32 @@
+ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.title {
+     margin: 0;
+     position: relative;
+     font-size: 8vh;
+     top: 1.8vh;
+}
+
+li {
+    padding: 0;
+    margin: 0 5px;
+    list-style: none;
+    position: relative;
+    font-size: 2.5vh;
+    top: 3.6vh;
+}
+
+.avatar {
+    height:5vh;
+    border-radius: 50%;
+    padding-bottom: 1vh;
+    padding-right: 0.75vh;
+}
+
+.auth {
+    cursor: pointer;
+}

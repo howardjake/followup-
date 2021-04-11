@@ -1,8 +1,8 @@
 import Contact from '../Contact/Contact'
+import NewContact from '../NewContact/NewContact';
 
-function ContactBook({list}) {
+function ContactBook({list, setList}) {
 
-    console.log(list)
     return (
         <div className="ContactBook">
             Contact Book
@@ -15,8 +15,9 @@ function ContactBook({list}) {
                     <th>Last Contacted</th>
                 </tr>
                 {list.contacts.map((contact, idx) =>
-                (<Contact contact={contact} />
+                (<Contact key={idx} contact={contact} />
                 ))}
+                <NewContact setList={setList} list={list} />
             </table>
         </div>
     )
