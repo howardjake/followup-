@@ -3,6 +3,7 @@ import NewContact from '../NewContact/NewContact';
 
 function ContactBook({list, setList}) {
 
+if (list.contacts) {
     return (
         <div className="ContactBook">
             Contact Book
@@ -15,12 +16,20 @@ function ContactBook({list, setList}) {
                     <th>Last Contacted</th>
                 </tr>
                 {list.contacts.map((contact, idx) =>
-                (<Contact key={idx} contact={contact} />
+                (<Contact key={idx} contact={contact} list={list} setList={setList}/>
                 ))}
-                <NewContact setList={setList} list={list} />
+                {!list.editMode ?
+                <NewContact setList={setList} list={list} /> : ""
+                }
             </table>
         </div>
     )
+} else {
+    return (
+
+        <></>
+    )
+}
 }
 
 export default ContactBook;

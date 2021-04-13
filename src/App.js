@@ -11,10 +11,10 @@ import './App.css';
 function App() {
 
 async function getAppData() {
-    // if(!list.user) return;
+    if(!list.user) return;
     try {
-      const contacts = await getContacts()
-      console.log(contacts)
+      const contacts = await getContacts(list.user.uid)
+      // console.log(contacts)
       setList((prevState) =>({
         ...prevState,
         contacts,
@@ -22,7 +22,7 @@ async function getAppData() {
     } catch (error) {
       console.log(error)
     }
-  }
+ }
 
   const [ list, setList ] = useState({
     contacts: [],
@@ -33,6 +33,7 @@ async function getAppData() {
       number: "",
     },
       user: null,
+      editMode: false,
   });
 
   useEffect(() => {
@@ -56,7 +57,10 @@ async function getAppData() {
   return (
     <div className="App">
       <Header user={list.user}/>
-      <ContactBook list={list} setList={setList}/>
+      {list.user ? 
+      <ContactBook list={list} setList={setList}/> :
+      ""
+      }
       
     </div>
   );

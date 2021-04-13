@@ -10,14 +10,13 @@ ul {
      font-size: 8vh;
      top: 1.8vh;
 }
-
 li {
     padding: 0;
     margin: 0 5px;
     list-style: none;
     position: relative;
-    font-size: 2.5vh;
-    top: 3.6vh;
+    font-size: 3.5vh;
+    top: 3vh;
 }
 
 .avatar {

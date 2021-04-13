@@ -8,7 +8,7 @@
   position: fixed;
   width: 98vw;
   background-color: #9b9b9b;
-  height: 9vh;
+  height: 6vw;
   display: flex;
   font-size: calc(10px + 2vmin);
   font-family: 'Raleway', sans-serif;
@@ -16,6 +16,7 @@
   justify-content: space-between;
   padding: 0 1vw;
   align-items: flex-end;
+  z-index: 2;
 }
 
 .App-link {
@@ -26,10 +27,10 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 0 0 2vw;
-  top: 10vh;
-  z-index: -2;
+  top: 8vw;
+  z-index: ;
 }
 
 th {
