@@ -6,7 +6,7 @@
 
 .App-header {
   position: fixed;
-  width: 98vw;
+  width: 100vw;
   background-color: #9b9b9b;
   height: 6vw;
   display: flex;
@@ -27,7 +27,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 90vw;
   margin: 0 0 0 2vw;
   top: 8vw;
   z-index: ;
@@ -42,6 +42,18 @@ td {
   text-align: left;
   border-left: 1px dotted rgb(161, 161, 161);
   border-bottom: 1px solid rgba(185, 184, 184, 0.747);
+}
+
+@media screen (max-width: 1000px){
+  .ContactBook {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: 90vw;
+    margin: 0 0 0 2vw;
+    top: 8vw;
+    z-index: ;
+  }
 }
 
 

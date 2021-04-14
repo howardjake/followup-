@@ -1,6 +1,7 @@
 td {
     font-size: 12px;
     height: 15px;
+    width: 15vw;
 }
 
 button {
@@ -9,4 +10,17 @@ button {
 
 p {
     margin-left: 0.5vw;
+}
+
+@media (max-width: 1000px) {
+    td {
+        font-size: 1.8vw;
+        height: .5vh;
+    }
+    button {
+        font-size: 1vw;
+    }
+    p {
+        margin-left: 0.2vw;
+    }
 }

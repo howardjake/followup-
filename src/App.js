@@ -25,6 +25,7 @@ async function getAppData() {
  }
 
   const [ list, setList ] = useState({
+    user: null,
     contacts: [],
     newContact: {
       name: "", 
@@ -32,8 +33,9 @@ async function getAppData() {
       website: "", 
       number: "",
     },
-      user: null,
       editMode: false,
+      addMode: false,
+      timeFormat: false,
   });
 
   useEffect(() => {
