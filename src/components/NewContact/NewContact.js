@@ -154,20 +154,20 @@ async function handleDelete(id) {
       <tr>
                   <form action="" className="NewContact" onSubmit={addOne} id="form"/>
                       <td>
-                        <input autoFocus name="name" value={props.list.newContact.name} type="text"  className={styles.input, 'form-control'}form="form" onChange={handleChange} required/>
+                        <input autoFocus name="name" value={props.list.newContact.name} type="text"  className={styles.input + ' form-control'} form="form" onChange={handleChange} required/>
                       </td>
                    
                       <td>
 
-                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
+                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input + ' form-control'} form="form" onChange={handleChange} />
                       </td>
                     
                    <td>
-                        <input name="website" value={props.list.newContact.website}type="text" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
+                        <input name="website" value={props.list.newContact.website}type="text" className={styles.input + ' form-control'} form="form" onChange={handleChange} />
                    </td>
                     
                    <td>
-                        <input value={props.list.newContact.number} type="text" name="number" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
+                        <input value={props.list.newContact.number} type="text" name="number" className={styles.input+  ' form-control'} form="form" onChange={handleChange} />
                    </td>
                    <td>
                      

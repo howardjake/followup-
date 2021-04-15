@@ -45,8 +45,8 @@ async function getAppData() {
     const cancelSub = auth.onAuthStateChanged(user => {
       if (user) {
         setList(prevState => ({
-        ...prevState, 
-        user,
+          ...prevState, 
+          user,
         }));
       } else {
         setList(prevState => ({
@@ -60,9 +60,10 @@ async function getAppData() {
     return function() {
       cancelSub();
     }
-
+    
+    // eslint-disable-next-line
   }, [list.user])
-
+  
   return (
     <div className="App">
       <Header user={list.user}/>
