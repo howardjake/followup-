@@ -11,9 +11,6 @@ import './App.css';
 
 
 function App() {
-
-  
-
 async function getAppData() {
     if(!list.user) return;
     try {
@@ -44,7 +41,8 @@ async function getAppData() {
 
   useEffect(() => {
     getAppData();
-    auth.onAuthStateChanged(user => {
+
+    const cancelSub = auth.onAuthStateChanged(user => {
       if (user) {
         setList(prevState => ({
         ...prevState, 
@@ -57,7 +55,12 @@ async function getAppData() {
           user,
         })); 
       }
-  });
+    });
+    
+    return function() {
+      cancelSub();
+    }
+
   }, [list.user])
 
   return (

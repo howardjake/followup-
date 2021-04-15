@@ -22,7 +22,7 @@ function NewContact(props) {
 async function addOne(e) {
     if (!props.list.user) return;
     e.preventDefault()
-    const BASE_URL = "http://localhost:3001/api/contacts/";
+    const BASE_URL = "https://followupbackend.herokuapp.com/api/contacts/";
     
     function addContact(){
       const { name, email, website, number, lastContacted } = props.list.newContact
@@ -82,7 +82,7 @@ async function addOne(e) {
 async function handleDelete(id) {
   console.log(id)
   if (!props.list.user) return;
-  const URL = `http://localhost:3001/api/contacts/${id}`;
+  const URL = `https://followupbackend.herokuapp.com/api/contacts/${id}`;
   
   const contacts = await fetch(URL, {
     method: 'DELETE'
