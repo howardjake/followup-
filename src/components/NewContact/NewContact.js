@@ -175,7 +175,7 @@ async function handleDelete(id) {
                      <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : <>{oldDate}
                      <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : ""}</p>
                    </td>
-                    <td className="buttons">
+                    <td>
 
                     {!props.list.editMode ?
                    <button type="submit" form="form" className="btn btn-primary btn-sm">Add</button> 

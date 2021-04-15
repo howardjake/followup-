@@ -15,7 +15,7 @@ if (list.contacts) {
     return (
         <div className="ContactBook">
             Contact Book
-            <table>
+            <table className="table table-striped">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
@@ -35,7 +35,7 @@ if (list.contacts) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td className="buttons">
+                    <td>
                     <button onClick={addMode} className="btn btn-dark btn-sm">Add Contact</button>
                     </td>
                 </tr> :""

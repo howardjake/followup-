@@ -56,7 +56,7 @@ function Contact(props) {
             <td><p>{props.contact.number}</p></td>
             <td><p>{since}</p></td>
             {!props.list.editMode ?
-                <td className="buttons">
+                <td>
                     <button type="submit" className="btn btn-primary btn-sm" onClick={() => handleEdited(props.contact._id)}>Edit</button>
                     
                 </td>
