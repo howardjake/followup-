@@ -40,7 +40,9 @@ function Contact(props) {
   let minutesAgo = parseInt((now.getTime() - rawdate.getTime()) / 60000)
 
     let since;
-    if (minutesAgo >= 1440) {
+    if (!minutesAgo && minutesAgo !== 0) {
+        since = `Never`
+    } else if (minutesAgo >= 1440) {
         since = `${parseInt(minutesAgo / 1440)} dys ago` 
     } else if (minutesAgo >= 60) {
         since = `${parseInt(minutesAgo / 60)} hrs ago`
@@ -53,16 +55,18 @@ function Contact(props) {
             {props.list.newContact._id === props.contact._id ? <NewContact setList={props.setList} list={props.list} />: 
             <tr>
             <td><p>{props.contact.name}</p></td>
-            <td><p>{props.contact.email}</p></td>
-            <td><p>{props.contact.website}</p></td>
+            <td><p>{props.contact.email} <a target="_blank"
+            href={`mailto:${props.contact.email}`} ><i class="fas fa-paper-plane"></i></a> </p></td>
+            <td><p><a target="_blank" href={props.contact.website}>{props.contact.website}</a></p></td>
             <td><p>{props.contact.number}</p></td>
             <td><p>{since}</p></td>
             {!props.list.editMode ?
-                <td>
-                <button type="submit" onClick={() => handleEdited(props.contact._id)}>Edit</button>
-                
+                <td className="buttons">
+                    <button type="submit" className="btn btn-primary btn-sm" onClick={() => handleEdited(props.contact._id)}>Edit</button>
+                    
+                </td>
 
-                </td> : ""
+                 : ""
             }
             </tr>
         }

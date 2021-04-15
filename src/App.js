@@ -8,7 +8,11 @@ import{ getContacts } from './services/database'
 
 import './App.css';
 
+
+
 function App() {
+
+  
 
 async function getAppData() {
     if(!list.user) return;

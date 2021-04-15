@@ -1,15 +1,18 @@
 td {
-    font-size: 12px;
+    font-size: 1vw;
     height: 15px;
-    width: 15vw;
+    width: 20vw;
+    vertical-align: top;
 }
 
 button {
+    font-size: 1vw;
     margin: 2px 3px;
 }
 
 p {
     margin-left: 0.5vw;
+    margin-bottom: 0;
 }
 
 @media (max-width: 1000px) {
@@ -24,3 +27,5 @@ p {
         margin-left: 0.2vw;
     }
 }
+
+

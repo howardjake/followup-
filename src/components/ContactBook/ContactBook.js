@@ -35,8 +35,8 @@ if (list.contacts) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>
-                    <button onClick={addMode}>Add Contact</button>
+                    <td className="buttons">
+                    <button onClick={addMode} className="btn btn-dark btn-sm">Add Contact</button>
                     </td>
                 </tr> :""
                 }

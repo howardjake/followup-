@@ -27,11 +27,12 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  max-width: 90vw;
-  margin: 0 0 0 2vw;
+  width: 1300px;
+  margin: 0 auto;
   top: 8vw;
   z-index: ;
 }
+
 
 th {
   text-align: left;
@@ -42,6 +43,11 @@ td {
   text-align: left;
   border-left: 1px dotted rgb(161, 161, 161);
   border-bottom: 1px solid rgba(185, 184, 184, 0.747);
+}
+
+.buttons {
+  border-left: 1px dotted rgba(161, 161, 161, 0);
+  border-bottom: 1px solid rgba(185, 184, 184, 0);
 }
 
 @media screen (max-width: 1000px){
@@ -56,4 +62,10 @@ td {
   }
 }
 
+.btn {
+  font-size: 1vw;
+}
 
+.form-control {
+  font-size: 1vw;
+}

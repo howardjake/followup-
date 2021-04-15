@@ -1,4 +1,7 @@
 import styles from '../NewContact/NewContact.module.css';
+import React from "react";
+
+
 
 function NewContact(props) {
 
@@ -10,6 +13,7 @@ function NewContact(props) {
             ...prevState.newContact,
             [e.target.name]: e.target.value,
           } 
+
         })) 
       }
 
@@ -21,14 +25,14 @@ async function addOne(e) {
     const BASE_URL = "http://localhost:3001/api/contacts/";
     
     function addContact(){
-      const { name, email, website, number } = props.list.newContact
+      const { name, email, website, number, lastContacted } = props.list.newContact
       const uid  = props.list.user.uid
       return fetch(BASE_URL, {
         method: 'POST',
         headers: {
           "Content-type" : "Application/json"
         },
-        body: JSON.stringify({name, email, website, number, uid})
+        body: JSON.stringify({name, email, website, number, uid, lastContacted})
       }).then(res => res.json())
       
     }
@@ -135,45 +139,55 @@ async function handleDelete(id) {
         TOD = "PM"
     } else {
         TOD = "AM"
+        if (hour === 0) {
+          hour = hour + 12
+        }
     }
     if (minute < 10) {
         minute = `0${minute}`
     }
-    let oldDate = `${rawdate.getMonth() + 1}/${rawdate.getDate()}/${rawdate.getFullYear()} ${hour}:${minute} ${TOD}`
+    let oldDate = `${rawdate.getMonth() + 1}/${rawdate.getDate()}/${rawdate.getFullYear()} ${hour}:${minute} ${TOD}`;
 
-    return(       
+
+    return(   
+          
       <tr>
                   <form action="" className="NewContact" onSubmit={addOne} id="form"/>
                       <td>
-                        <input name="name" value={props.list.newContact.name} type="text"  className={styles.input}form="form" onChange={handleChange} required/>
+                        <input autoFocus name="name" value={props.list.newContact.name} type="text"  className={styles.input, 'form-control'}form="form" onChange={handleChange} required/>
                       </td>
                    
                       <td>
 
-                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input} form="form" onChange={handleChange} />
+                        <input name="email" value={props.list.newContact.email}type="email" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
                       </td>
                     
                    <td>
-                        <input name="website" value={props.list.newContact.website}type="text" className={styles.input} form="form" onChange={handleChange} />
+                        <input name="website" value={props.list.newContact.website}type="text" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
                    </td>
                     
                    <td>
-                        <input value={props.list.newContact.number} type="text" name="number" className={styles.input} form="form" onChange={handleChange} required/>
+                        <input value={props.list.newContact.number} type="text" name="number" className={styles.input, 'form-control'} form="form" onChange={handleChange} />
                    </td>
                    <td>
-                     <p>{props.list.editMode ? oldDate : ""}</p>
+                     
+                     <p>{props.list.editMode ? !props.list.addMode ? <>{oldDate}
+                     <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : <>{oldDate}
+                     <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : ""}</p>
                    </td>
-                    <td>
+                    <td className="buttons">
+
                     {!props.list.editMode ?
-                   <button type="submit" form="form" >Add</button> 
-                   : <><button type="submit" form="form">Update</button>
-                   <button onClick={() => handleContacted(props.list.newContact._id)}>Contacted</button>
-                   <button onClick={() => handleDelete(props.list.newContact._id)}>❌</button>
+                   <button type="submit" form="form" className="btn btn-primary btn-sm">Add</button> 
+                   : <><button type="submit" form="form" className="btn btn-primary btn-sm">Update</button>
+                   
+                   <button onClick={() =>  {if(window.confirm('Are you sure want to delete this contact?')) handleDelete(props.list.newContact._id)}} className="btn btn-danger btn-sm">X</button>
                     </>
                    
-                    }
-                    <button onClick={handleCancel}>Cancel</button>
-                    </td>
+                  }
+                    <button onClick={handleCancel } className="btn btn-secondary btn-sm">Cancel</button>
+                    
+                  </td>
                
                 </tr>
            
