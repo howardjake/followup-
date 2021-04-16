@@ -130,7 +130,7 @@ async function handleDelete(id) {
     }
 
 
-    let rawdate = new Date(props.list.newContact.lastContacted)
+    let rawdate = new Date(props.list.newContact.lastContacted);
     let hour = rawdate.getHours();
     let minute = rawdate.getMinutes()
     let TOD;
@@ -148,6 +148,10 @@ async function handleDelete(id) {
     }
     let oldDate = `${rawdate.getMonth() + 1}/${rawdate.getDate()}/${rawdate.getFullYear()} ${hour}:${minute} ${TOD}`;
 
+    if (oldDate === `NaN/NaN/NaN NaN:NaN AM`){
+          oldDate = `Never`
+    }
+    
 
     return(   
           
@@ -171,8 +175,10 @@ async function handleDelete(id) {
                    </td>
                    <td>
                      
-                     <p>{props.list.editMode ? !props.list.addMode ? <>{oldDate}
-                     <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : <>{oldDate}
+                     <p>{props.list.editMode ? !props.list.addMode ? 
+                     <>{oldDate}
+                     <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> 
+                     : <>{oldDate}
                      <button onClick={() => handleContacted(props.list.newContact._id)} className="btn btn-success btn-sm">✓</button></> : ""}</p>
                    </td>
                     <td>
