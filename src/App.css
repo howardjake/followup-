@@ -18,7 +18,7 @@
   padding: 0 1vw;
   align-items: flex-end;
   z-index: 2;
-
+  border-bottom: palegreen solid 2px;
   box-shadow: 5px 0px 15px 10px #8080805d;
 }
 
