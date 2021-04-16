@@ -69,7 +69,14 @@ async function getAppData() {
       <Header user={list.user}/>
       {list.user ? 
       <ContactBook list={list} setList={setList}/> :
-      ""
+      <>
+      <video autoPlay muted loop src="background3.mp4" className="bg"></video>
+      <div className="typewriter">
+
+      <h1>keep track and contact...</h1>
+
+      </div>
+      </>
       }
       
     </div>

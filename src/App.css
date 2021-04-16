@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
 
 .App {
   text-align: center;
@@ -11,12 +11,15 @@
   height: 6vw;
   display: flex;
   font-size: calc(10px + 2vmin);
-  font-family: 'Raleway', sans-serif;
-  color: rgb(0, 0, 0);
+  font-weight: 550;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: rgb(182, 216, 173);
   justify-content: space-between;
   padding: 0 1vw;
   align-items: flex-end;
   z-index: 2;
+
+  box-shadow: 5px 0px 15px 10px #8080805d;
 }
 
 .App-link {
@@ -69,4 +72,48 @@ td {
 
 .table {
   padding: 1px;
+}
+
+
+.bg {
+  z-index: -3;
+  position: fixed;
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+}
+
+
+.typewriter{
+  margin: auto;
+  display: flex;  position: relative;
+  /* top: 20vh; */
+  align-items: center;
+  width: min-content;
+}
+
+.typewriter h1 {
+  background-color: #aca8a8a8;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid rgb(0, 0, 0); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 40vh auto 0 ; /* Gives that scrolling effect as the typing happens */
+  top: 20vh;
+  letter-spacing: .15em; /* Adjust as needed */
+  color: rgb(14, 19, 13);
+  animation: 
+    typing 3s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% { width: 0 }
+  100% { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
